@@ -1,0 +1,80 @@
+:root{
+    --main-bg-color: #333;
+    --calc-container-bg-color: #c4c4c4;
+    --main-font-color: #000;
+    --calc-screen-text-color: #666;
+    --btn-bg-color: #dbdbdb;
+    --btn-number-bg-color: #f3f3f3;
+    --btn-number-bg-color-hover: #bababa;
+    --btn-equal-bg-color: #75a5cb;
+    --btn-equal-bg-color-hover: #3a91d8;
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em;
+}
+#calcContainer{
+    width: 400px;
+    padding: .5em;
+    background-color: var(--calc-container-bg-color);
+    color: var(--main-font-color);
+    display: flex;
+    flex-direction: column;
+}
+#calcContainer span{
+    font-size: .8em;
+    font-weight: 300;
+    color: var(--calc-screen-text-color) ;
+}
+#screenContainer{
+    text-align: right;
+}
+#previousOperation,
+#currentOperation{
+    padding: .2em;
+    overflow-wrap: break-word;
+    min-height: 1.6em;
+}
+#previousOperation{
+    color: var(--calc-screen-text-color);
+}
+#currentOperation{
+    font-size: 3em;
+    font-weight: 700;
+}
+#buttonsContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+}
+#buttonsContainer button{
+    border: 1px solid transparent;
+    border-radius: 0;
+    height: 4em;    
+    font-size: 1.2em;
+    background-color: var(--btn-bg-color);
+    cursor: pointer;
+}
+#buttonsContainer .number{
+    background-color: var(--btn-number-bg-color);
+}
+#buttonsContainer button:hover{
+    background-color: var(--btn-number-bg-color-hover);
+}
+#buttonsContainer #btnEqual{
+    grid-column: span 2;
+    background-color: var(--btn-equal-bg-color);
+}
+#buttonsContainer #btnEqual:hover{
+    background-color: var(--btn-equal-bg-color-hover);
+}
